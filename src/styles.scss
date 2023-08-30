@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('/node_modules/bootstrap-icons/font/bootstrap-icons.css');
+:root {
+  --primary: #ffcc00;
+  --secondary: #fd7062;
+  --light: #cb6ce6;
+  --dark: #070505;
+  --transparent: transparent;
+  --white:#fff;
+  --azul:#1ED5C3;
+  --rosa:#FD7062;
+  }
+  @font-face {
+    font-family: AtmaL;
+    src: url("../src/assets/fonts/Atma-Light.ttf");
+  }
+  @font-face {
+    font-family: AtmaR;
+    src: url("../src/assets/fonts/Atma-Regular.ttf");
+  }
+  @font-face {
+    font-family: AtmaM;
+    src: url("../src/assets/fonts/Atma-Medium.ttf");
+  }
+  @font-face {
+    font-family: AtmaB;
+    src: url("../src/assets/fonts/Atma-Bold.ttf");
+  }
+  *{
+    font-family: AtmaL;
+  }
+  p{
+    font-family: AtmaL;
+  }
+
+  h1{
+    font-family: AtmaB;
+  }

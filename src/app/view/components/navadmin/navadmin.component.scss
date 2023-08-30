@@ -1,0 +1,42 @@
+img:first-of-type{
+  width: 3vw;
+}
+@media screen and (min-width:992px){
+.container-fluid:nth-child(2){
+  margin-top: 100px;
+}
+}
+@media screen and (max-width:992px){
+  img{
+    width: 5vw;
+  }
+  .fixed-top{
+    position: inherit;
+  }
+  }
+@media screen and (max-width:570px){
+  img:first-of-type{
+    width: 6vh;
+  }
+  }
+
+nav{
+  background-color: var(--white);
+}
+a{
+  text-decoration: none;
+  font-family: AtmaB;
+}
+.container-fluid:nth-child(2){
+  margin-top: 11vh;
+}
+
+.card{
+  width: 17rem;
+}
+h5{
+  font-family: AtmaB;
+}
+#fs-5{
+  font-size:35px;
+}

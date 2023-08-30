@@ -1,0 +1,29 @@
+<app-navadmin></app-navadmin>
+<div class="margin">
+  <div class="wrapper">
+    <form class="login mt-5" [formGroup]="Add">
+      <h5 class="title">Agregar noticia</h5>
+      <div class="alert alert-success text-center text-success" *ngIf="message===true">
+        <strong>Agregado correctamente <i class="bi bi-check2-circle"></i></strong>
+      </div>
+      <input type="text" placeholder="Titulo" autofocus formControlName="titulo"/>
+      <input type="text" placeholder="Autor"  formControlName="autor"/>
+      <input type="date" placeholder="fecha"  formControlName="fecha"/>
+      <p class="text-primary py-0 my-0">Archivo</p>
+      <input type="file"  class="inputfile" class="form-control"formControlName="document" accept="application/pdf" (change)="getdoc($event)"/>
+      <p class="text-primary py-0 my-0">Descripción</p>
+      <textarea name="" id="" rows="5" formControlName="description" class="d-block"></textarea>
+      <p class="text-primary py-0 my-0">Imagén</p>
+      <input type="file"  class="inputfile" class="form-control"formControlName="img"accept="image/*" (change)="getImageData($event)"/>
+      <img [src]="imgurl" alt="" class="w-100" *ngIf="this.Add.get('img')?.value !== '' && imgurl !== ''">
+      <p class="fs-5 text-danger" *ngIf="this.Add.get('img')?.value === '' && imgurl !== ''">Agregue una imagen</p>
+      <img src="../../../../../assets/img/error/errorimage.jpg" class="w-100" *ngIf="this.Add.get('img')?.value === '' && imgurl !== ''">
+      <button (click)="add()" [disabled]="this.Add.invalid">
+        <i class="spinner"></i>
+        <span class="state" >Agregar</span>
+      </button>
+    </form>
+
+  </div>
+</div>
+

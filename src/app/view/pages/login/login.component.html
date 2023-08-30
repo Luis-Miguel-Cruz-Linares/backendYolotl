@@ -1,0 +1,16 @@
+
+    <div class="login">
+      <h1>Login</h1>
+        <form method="post" class="" [formGroup]="Form" >
+          <input type="text" placeholder="Usuario" required="required" formControlName="usuario" />
+          <p *ngIf="Form.get('usuario')?.invalid" class="text-danger my-0 invalid" >Escriba su correo </p>
+            <input type="password" placeholder="Contraseña" required="required" formControlName="password" />
+          <p *ngIf="Form.get('password')?.invalid" class="text-danger my-0 invalid" >Escriba la contraseña</p>
+            <span class="w-100 d-block mx-auto mt-3 text-center ">
+              <button type="submit" class="btn btn-primary mt-1" (click)="login()" [disabled]="Form.invalid">Log In.</button>
+            </span>
+            <!-- <span class="w-100 d-block mx-auto mt-5 text-center">
+              <a routerLink="/login/forgot" class=""><strong>¿Olvido su contraseña?</strong></a>
+            </span> -->
+        </form>
+    </div>

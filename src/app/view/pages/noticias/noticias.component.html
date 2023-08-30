@@ -1,0 +1,29 @@
+<app-navadmin></app-navadmin>
+<div class="container-fluid row mx-auto justify-content-lg-start justify-content-md-start justify-content-sm-center">
+  <div class="card col-lg-2 col-md-4 col-sm-5 mx-1 my-1" *ngFor="let i of notices">
+    <img [src]="i.data.img" class="card-img-top w-100" alt="img de la noticia" *ngIf="i.data.img" >
+    <ng-template>
+      <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg">
+    </ng-template>
+    <div class="card-body">
+      <h5 class="card-title">Titulo: {{i.data.titulo}}</h5>
+      <p class="card-text">Autor: {{i.data.autor}}</p>
+      <p class="card-text">Fecha: {{i.data.fecha}}</p>
+      <div class="row">
+        <div class="col">
+          <a (click)="modificar(i.id)" class="me-2 btn btn-warning">
+            <i class="bi bi-pen-fill"></i>
+          </a>
+          <button (click)="delete(i.id)" class="me-2 btn btn-danger" >
+            <i class="bi bi-trash-fill"></i>
+          </button>
+          <button class="btn btn-primary" (click)="downloadImage(i.data.document)">
+            <i class="bi bi-download"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <app-modificar [dato]="data" (cerrarmodificar)="closemodify()" ></app-modificar>
+  <app-delete (cerrar)="cerrarnoticia()" [dato]="i"></app-delete>
